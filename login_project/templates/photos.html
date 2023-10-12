@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Rowan's ACM-W Chapter{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Album</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .photo-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .photo {
+            width: 33.33%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
+        .caption {
+            margin-top: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>ACM-W Photo Album</h1>
+</div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload Photo</button>
+    </form>
+    <div class="photo-container">
+        <div class="photo">
+            <img src='{% static "1.png" %}' alt="Image One">
+            <p class="caption">Meet other likeminded women in a safe environment!</p>
+        </div>
+        <div class="photo">
+            <img src='{% static "2.png" %}' alt="Image Two">
+            <p class="caption">Binary Bracelet Making Night</p>
+        </div>
+        <div class="photo">
+            <img src='{% static "5.png" %}' alt="banner">
+            <p class="caption">Speaker Presentations</p>
+        </div>
+        <div class="photo">
+            <img src='{% static "4.jpg" %}' alt="banner">
+            <p class="caption">Biweekly General Board Meetings</p>
+        </div>
+        <div class="photo">
+            <img src='{% static "3.jpg" %}' alt="banner">
+            <p class="caption">Volunteer Opportunities</p>
+        </div>
+        <div class="photo">
+            <img src='{% static "6.jpg" %}' alt="banner">
+            <p class="caption">Robot Building</p>
+        </div>
+    </div>
+    
+    {% for photo in photos %}
+    <div class="photo">
+        <img src="{{ photo.image.url }}" alt="{{ photo.description }}">
+        <p class="caption">{{ photo.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+
+{% endblock %}
