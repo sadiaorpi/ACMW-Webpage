@@ -6,7 +6,7 @@ Made using: Python3.6, and latest version of Django (v5.0)
 How to Use:
 Clone the Repository:
 
-git clone https://github.com/yourusername/ReziBo.git
+```git clone https://github.com/yourusername/ReziBo.git```
 Install Dependencies:
 
 $ pip install -r requirements.txt
