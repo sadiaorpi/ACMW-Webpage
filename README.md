@@ -7,7 +7,7 @@ How to Use:
 
 Clone the Repository:
 
-```git clone https://github.com/yourusername/ReziBo.git```
+```git clone https://github.com/yourusername/ACMW-Webpage.git```
 
 Install Dependencies:
 
